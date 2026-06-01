@@ -45,7 +45,33 @@ The design has three main blocks:
 3. UART transmit FSM  
    Loads each character into a 10 bit frame and shifts it out on the TX line using UART timing.
 
-The transmitted frame format is:
+How to run
+Open Vivado and create a new RTL project.
+Add uart.vhd as a design source.
+Add uart_top.xdc as a constraints file.
+Set uart_top as the top module.
+Run Synthesis, Implementation, and Generate Bitstream.
+Program the Basys 3 board.
+Viewing output
+
+Open a serial terminal such as PuTTY, Tera Term, or the Arduino Serial Monitor with these settings:
+
+Baud rate: 9600
+Data bits: 8
+Parity: None
+Stop bits: 1
+
+Expected output:
+0123012301230123...
+
+Skills demonstrated:
+VHDL hardware design
+FPGA clock division
+FSM based control logic
+UART and RS232 style serial communication
+Xilinx Vivado workflow
+Basys 3 hardware validation
+
 
 ```text
 start bit | data bit 0 | data bit 1 | ... | data bit 7 | stop bit
